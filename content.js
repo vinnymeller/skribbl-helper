@@ -36,12 +36,14 @@ chatBoxElement.addEventListener('input', (evt) => {			 // observe changes to inp
 	var curWordLength = curWordElement.textContent.length;
 	var textBoxLength = chatBoxElement.value.length;
 	if (textBoxLength > curWordLength) {
-		chatBoxElement.value = chatBoxElement.value.substring(0, curWordLength);	// don't let the user type more letters than are in the word
+		//chatBoxElement.value = chatBoxElement.value.substring(0, curWordLength);	// don't let the user type more letters than are in the word
+		chatBoxElement.style.backgroundColor = '#ff7a83';
 		return;
 	}
 	for (var i = 0; i < textBoxLength; i++) {										// check that the users letters match the given letters
 		if (curWordElement.textContent[i] != '_' && curWordElement.textContent[i] != chatBoxElement.value[i]) {
-			chatBoxElement.value = chatBoxElement.value.substring(0, i);			// if they don't, go back to the last letter that matches
+			//chatBoxElement.value = chatBoxElement.value.substring(0, i);			// if they don't, go back to the last letter that matches
+			chatBoxElement.style.backgroundColor = '#ff7a83';
 			return;
 		}
 	}
